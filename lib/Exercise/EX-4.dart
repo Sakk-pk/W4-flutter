@@ -9,15 +9,17 @@ void exercise_4(){
               children: [
                 CustomCard(
                   text: 'OOP',
-                  color: Colors.blue[100],
                   ),
                   CustomCard(
                   text: 'DART',
-                  color: Colors.blue[300],
+                  color: Colors.blue[300]!,
                   ),
                   CustomCard(
                   text: 'FLUTTER',
-                  color: Colors.blue[600],
+                  gradient: const LinearGradient(colors:[ 
+                    Color(0xFF64B5F6),
+                    Color(0xFF1E88E5),
+                     ]) 
                   )
               ],
             ),
@@ -29,20 +31,24 @@ void exercise_4(){
 
 class CustomCard extends StatelessWidget{
   final String text;
-  final Color? color;
+  final Color color;
+  final Gradient? gradient;
+  
   const CustomCard({
-    super.key,
-    this.color,
-    required this.text,
+    this.color = Colors.blue,
+    required this.text, 
+    this.gradient,
 
   });
+  
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(40),
       margin: EdgeInsets.symmetric(vertical: 20),
       decoration: BoxDecoration(
-        color: color,
+        color: gradient == null ? color: null,
+        gradient: gradient,
         borderRadius: BorderRadius.circular(20)
       ),
       child: Center(
