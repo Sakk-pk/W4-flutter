@@ -8,6 +8,6 @@ import 'package:flutter_application_1/Exercise/EX-4.dart';
 void main(){
   // exercise_1();
   // exercise_2();
-   exercise_3();
-  // exercise_4();
+  // exercise_3();
+  exercise_4();
 }
